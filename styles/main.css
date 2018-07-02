@@ -1,0 +1,166 @@
+/* Reset User-Agent Styles*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* Fonts */
+
+@font-face {
+    font-family: "Supply";
+    font-weight: 400;
+    font-style: normal;
+    src: url("fonts/supply_regular.otf") format("otf");
+}
+
+@font-face {
+    font-family: "Supply";
+    font-weight: 600;
+    font-style: normal;
+    src: url("fonts/supply_medium.otf") format("otf");
+}
+
+/* Universal */
+
+/* https://www.materialui.co/colors */
+
+body {
+    font-family: "Supply", monospace;
+    line-height: 1.75em;
+    color: #424242; /* Grey 800 */
+}
+
+h1 {
+    font-size: 28px;
+    margin: 30px 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover, a:visited:hover {
+   color: #FF7043; /* Deep Orange 400 */
+}
+
+a:visited {
+    color: #424242;
+}
+
+/* Header */
+
+.header {
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 1fr);
+    grid-auto-flow: column;
+    align-items: center;
+    padding: 40px 60px;
+    background: linear-gradient(rgba(66, 66, 66, 0.25), transparent);
+    background: -webkit-linear-gradient(rgba(66, 66, 66, 0.25), transparent);
+    background: -moz-linear-gradient(rgba(66, 66, 66, 0.25), transparent);
+    background: -o-linear-gradient(rgba(66, 66, 66, 0.25), transparent);
+}
+
+.logo {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url("../images/logo.svg") no-repeat;
+}
+
+.logo:hover, .welcome-button:hover {
+    position: relative;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+
+.welcome-button:hover {
+    background: #FF5722; /* Deep Orange 500*/
+}
+
+.navigation {
+    justify-self: end;
+}
+
+.navigation a {
+    margin-left: 30px;
+}
+
+.navigation a:first-child {
+    margin-left: 0;
+}
+
+/* Welcome */
+
+.welcome {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 125px 0;
+    background: linear-gradient(to top right, rgba(245,245,245, 0.5), rgba(187,222,251, 0.5));
+    background: -webkit-linear-gradient(to top right, rgba(245,245,245, 0.5), rgba(187,222,251, 0.5));
+    background: -moz-linear-gradient(to top right, rgba(245,245,245, 0.5), rgba(187,222,251, 0.5));
+    background: -o-linear-gradient(to top right, rgba(245,245,245, 0.5), rgba(187,222,251, 0.5));
+    text-align: center;
+}
+
+.welcome-image, .welcome-content {
+    padding: 0 30px;
+}
+
+.welcome-image img {
+    position: relative;
+    max-width: 500px;
+    animation: move 1s infinite ease-in-out;
+}
+
+.welcome-content {
+    align-self: center;
+    max-width: 500px;
+    text-align: left;
+}
+
+.welcome-button {
+    display: inline-block;
+    padding: 10px 40px;
+    margin-top: 30px;
+    background: #FF7043; /* Deep Orange 400 */
+    cursor: pointer;
+    color: #FFF;
+}
+
+@keyframes move {
+    0% {
+        top: 5px;
+    }
+    50% {
+        top: 0;
+    }
+    100% {
+        top: 5px;
+    }
+}
+
+@-webkit-keyframes move {
+    0% {
+        top: 5px;
+    }
+    50% {
+        top: 0;
+    }
+    100% {
+        top: 5px;
+    }
+}
+
+@media (max-width: 800px) {
+    .header {
+        justify-items: center;
+    }
+    .navigation {
+        display: none;
+    }
+}
